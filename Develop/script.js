@@ -51,17 +51,13 @@ function generatePassword() {
     Uppercaselist[i] = Lowercaselist[i].toUpperCase()
   }
   
-  if (userWantsNumbers === true) {
-    optionsCart.push(numberList)
-  }
+  if (userWantsNumbers) optionsCart.push(numberList)
   
-  if (userWantsSymbols === true) {
-    optionsCart.push(symbollist)
-  }
+  if (userWantsSymbols) optionsCart.push(symbollist)
   
-  if (userWantsUppercase === true) {
-    optionsCart.push(Uppercaselist)
-  }
+  if (userWantsUppercase)optionsCart.push(Uppercaselist)
+  
+  if (userWantLowercase) optionsCart.push(Lowercaselist)
   
   if (userWantLowercase === true) {
     optionsCart.push(Lowercaselist)
@@ -84,9 +80,6 @@ function generatePassword() {
   
   }
   
-
-
-
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
